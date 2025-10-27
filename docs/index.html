@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>JAMP ▪️ Soporte Técnico</title>
+
+    <!-- Descripción y palabras clave para SEO -->
+    <meta name="description" content="Soporte técnico profesional en Uruguay. Servicio presencial y remoto.">
+    <meta name="keywords" content="soporte técnico, Uruguay, WiFi, mantenimiento PC, reparación computadoras">
+
+    <!-- =======================
+         FAVICON (icono de pestaña)
+         ======================= -->
+    <!-- Asegurate de tener el archivo en la ruta correcta -->
+    <!-- Si tu HTML está dentro de /html/, usá ../img/logo.png -->
+    <!-- Idealmente: logo blanco, cuadrado y fondo transparente -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/logo.png">
+
+    <!-- =======================
+         ESTILOS Y LIBRERÍAS
+         ======================= -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome (para íconos como el de redes o herramientas) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (animaciones al hacer scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tu hoja de estilos personalizada -->
+    <!-- Si tu HTML está en /html/ y el CSS en /css/, usá ../css/styles.css -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                <img src="img/logo.png" alt="JAMP" height="40" class="logo-img">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#info">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hardware">Hardware</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#software">Software</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resenas">Reseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Theme toggle button (fuera del colapsable para ser siempre visible) -->
+            <div class="d-flex align-items-center ms-3">
+                <button id="themeToggleBtn" class="btn btn-theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Carrusel -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-carousel-container">
+                        <div class="carousel" id="hero-carousel">
+                            <button class="carousel-arrow prev" id="hero-prev-btn" aria-label="Slide anterior">‹</button>
+                            <button class="carousel-arrow next" id="hero-next-btn" aria-label="Slide siguiente">›</button>
+                            
+                            <div class="carousel-slide hero-slide1 show">
+                                <!-- Imagen de fondo para la primera diapositiva (mantiene texto y botones encima) -->
+                                <img src="img/1.jpg" alt="Soporte técnico" class="hero-bg-img">
+                                <div class="hero-content text-center">
+                                    <h1 class="hero-title">Soporte Técnico Profesional en Uruguay</h1>
+                                    <p class="hero-subtitle">Optimizamos tu WiFi y mantenemos tus equipos para que trabajes sin interrupciones. Servicio presencial y remoto en toda la ciudad.</p>
+                                    <div class="hero-buttons">
+                                        <a href="#contacto" class="btn btn-primary btn-lg me-3">Solicitá tu diagnóstico de WiFi</a>
+                                        <a href="https://wa.me/598XXXXXXXX" class="btn btn-outline-light btn-lg" target="_blank">Contactar por WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide hero-slide2">
+                                <!-- Imagen sola sin texto ni botones -->
+                                <img src="img/2.jpg" alt="Tecnología" class="hero-bg-img">
+                            </div>
+                            
+                            <div class="carousel-slide hero-slide3">
+                                <!-- Imagen sola sin texto ni botones -->
+                                <img src="img/3.jpg" alt="Soluciones" class="hero-bg-img">
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-index="0"></button>
+                                <button class="carousel-dot" data-index="1"></button>
+                                <button class="carousel-dot" data-index="2"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Info Section (movida arriba para mejor flujo) -->
+    <section id="info" class="info-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Acerca de JAMP</h2>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="info-content">
+                        <h3>Mi Historia</h3>
+                        <p>JAMP nació de mi pasión por la tecnología y del compromiso de brindar soluciones informáticas accesibles y confiables en Uruguay. Con años de experiencia en soporte técnico, me especializo en optimizar la conectividad WiFi y el mantenimiento de equipos para clientes residenciales y pequeñas empresas.</p>
+                        
+                        <h3>Misión</h3>
+                        <p>Proporciono soporte técnico de calidad, solucionando problemas informáticos de manera eficiente y profesional, para que mis clientes puedan trabajar y conectarse sin interrupciones.</p>
+                        
+                        <h3>Visión</h3>
+                        <p>Ser la empresa de referencia en soporte técnico informático en Uruguay, reconocida por mi confiabilidad, rapidez y atención personalizada.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="info-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">80+</div>
+                            <div class="stat-label">Clientes satisfechos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">80+</div>
+                            <div class="stat-label">Dispositivos optimizados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Uruguay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Destacados -->
+    <section id="servicios" class="services-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Mis Servicios</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Soluciones técnicas profesionales para tu hogar y empresa</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Optimización WiFi</h3>
+                        <p>Mejoramos la velocidad y cobertura de tu red WiFi. Diagnóstico completo y solución personalizada para tu hogar o empresa.</p>
+                        <ul class="service-features">
+                            <li>Diagnóstico de red</li>
+                            <li>Optimización de señal</li>
+                            <li>Configuración avanzada</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-outline-primary">Consultar</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Mantenimiento PCs</h3>
+                        <p>Actualizaciones, limpieza y optimización de computadoras y notebooks. Tu equipo funcionando al 100% de su capacidad.</p>
+                        <ul class="service-features">
+                            <li>Limpieza de hardware</li>
+                            <li>Actualización de software</li>
+                            <li>Optimización de rendimiento</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-outline-primary">Consultar</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Soporte Remoto</h3>
+                        <p>Asistencia técnica a distancia. Solucionamos problemas sin que tengas que salir de casa. Rápido, seguro y eficiente.</p>
+                        <ul class="service-features">
+                            <li>Asistencia a distancia</li>
+                            <li>Resolución rápida</li>
+                            <li>Instalación de programas</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-outline-primary">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas (movida) -->
+    <!-- sección de reseñas movida más abajo para un flujo más coherente -->
+
+    <!-- Hardware Section -->
+    <section id="hardware" class="hardware-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Servicios de Hardware</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Soluciones técnicas para optimizar el rendimiento de tus equipos</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="service-detail-card">
+                        <h3><i class="fas fa-wifi me-3"></i>Optimización de WiFi</h3>
+                        <p>Mejoramos la conectividad de tu red WiFi con diagnóstico completo y soluciones personalizadas.</p>
+                        <ul class="service-list">
+                            <li>Análisis de cobertura de señal</li>
+                            <li>Optimización de canales WiFi</li>
+                            <li>Configuración de routers</li>
+                            <li>Instalación de repetidores</li>
+                            <li>Mejora de seguridad de red</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price">Desde $1.500</span>
+                            <span class="price-note">*Precio orientativo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="service-detail-card">
+                        <h3><i class="fas fa-tools me-3"></i>Mantenimiento y Reparación</h3>
+                        <p>Mantenimiento completo de PCs y notebooks para optimizar su rendimiento y durabilidad.</p>
+                        <ul class="service-list">
+                            <li>Limpieza de hardware</li>
+                            <li>Cambio de pasta térmica</li>
+                            <li>Actualización de componentes</li>
+                            <li>Reparación de fallas</li>
+                            <li>Diagnóstico completo</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price">Desde $2.000</span>
+                            <span class="price-note">*Precio orientativo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section id="software" class="software-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Servicios de Software</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Optimización y actualización de sistemas operativos y programas</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="service-detail-card">
+                        <h3><i class="fas fa-sync-alt me-3"></i>Actualizaciones y Optimización</h3>
+                        <p>Mantenemos tu sistema actualizado y optimizado para el mejor rendimiento.</p>
+                        <ul class="service-list">
+                            <li>Actualización de Windows</li>
+                            <li>Optimización de rendimiento</li>
+                            <li>Limpieza de archivos temporales</li>
+                            <li>Configuración de antivirus</li>
+                            <li>Respaldo de datos</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price">Desde $1.500</span>
+                            <span class="price-note">*Precio orientativo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="service-detail-card">
+                        <h3><i class="fas fa-download me-3"></i>Instalación de Programas</h3>
+                        <p>Instalamos y configuramos los programas que necesites para tu trabajo o entretenimiento.</p>
+                        <ul class="service-list">
+                            <li>Instalación de software</li>
+                            <li>Configuración inicial</li>
+                            <li>Migración de datos</li>
+                            <li>Configuración de correo</li>
+                            <li>Capacitación básica</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price">Desde $1.500</span>
+                            <span class="price-note">*Precio orientativo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas + formulario para agregar reseñas -->
+    <section id="resenas" class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title" data-aos="fade-up">Reseñas</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Lo que dicen mis clientes. Dejá tu reseña abajo.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="reviews-list">
+                        <!-- Reseñas existentes (permanentes) -->
+                        <div class="review-card">
+                            <div class="review-content">
+                                <p>"Excelente servicio. Resolvieron mi problema de WiFi en menos de una hora. Muy profesionales y puntuales."</p>
+                            </div>
+                            <div class="review-author">
+                                <h5>María González</h5>
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-content">
+                                <p>"El mantenimiento de nuestras computadoras fue impecable. Ahora funcionan mucho más rápido. Totalmente recomendados."</p>
+                            </div>
+                            <div class="review-author">
+                                <h5>Carlos Rodríguez</h5>
+                                <span>★★★★☆</span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-content">
+                                <p>"Muy buen servicio: llegaron rápido, diagnosticaron el problema y lo solucionaron explicando todo de forma clara. 100% recomendados."</p>
+                            </div>
+                            <div class="review-author">
+                                <h5>Luis Pérez</h5>
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <!-- Nota: solo 2 reseñas permanentes, otras serán momentáneas al agregarse -->
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="review-form-card">
+                        <h3>Dejá tu reseña</h3>
+                        <form id="reviewForm">
+                            <div class="mb-3">
+                                <label for="reviewName" class="form-label">Nombre *</label>
+                                <input type="text" id="reviewName" name="reviewName" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewRating" class="form-label">Calificación *</label>
+                                <select id="reviewRating" name="reviewRating" class="form-select" required>
+                                    <option value="5">★★★★★</option>
+                                    <option value="4">★★★★☆</option>
+                                    <option value="3">★★★☆☆</option>
+                                    <option value="2">★★☆☆☆</option>
+                                    <option value="1">★☆☆☆☆</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewComment" class="form-label">Comentario *</label>
+                                <textarea id="reviewComment" name="reviewComment" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Enviar reseña</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Contactanos</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Estamos listos para ayudarte con tus necesidades técnicas</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="contact-form-card">
+                        <h3>Envíanos un mensaje</h3>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre *</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefono" class="form-label">Teléfono *</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                </div>
+                                <div class="col-12">
+                                    <label for="servicio" class="form-label">Tipo de servicio</label>
+                                    <select class="form-select" id="servicio" name="servicio">
+                                        <option value="">Seleccionar servicio</option>
+                                        <option value="wifi">Optimización WiFi</option>
+                                        <option value="mantenimiento">Mantenimiento PC</option>
+                                        <option value="reparacion">Reparación</option>
+                                        <option value="remoto">Soporte Remoto</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label">Mensaje *</label>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required placeholder="Describí tu problema o consulta..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="contact-info-card">
+                        <h3>Información de contacto</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Ubicación</h5>
+                                <p>Uruguay<br>Servicio presencial y remoto</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h5>Teléfono</h5>
+                                <p>+598 98 499 887</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <p>Respuesta rápida<br>Disponible 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>pabloamaralm@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="whatsapp-cta">
+                            <a href="https://wa.me/59898499887" class="btn btn-whatsapp btn-lg w-100" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <img src="img/logo.png" alt="JAMP" height="30" class="me-2">
+                        <span>JAMP - Soporte Técnico Informático</span>
+                    </div>
+                    <p class="footer-text">Uruguay</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#info">Info</a>
+                        <a href="#servicios">Servicios</a>
+                        <a href="#hardware">Hardware</a>
+                        <a href="#software">Software</a>
+                        <a href="#resenas">Reseñas</a>
+                        <a href="#contacto">Contactos</a>
+                    </div>
+                    <p class="footer-copyright">© 2025 JAMP. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
