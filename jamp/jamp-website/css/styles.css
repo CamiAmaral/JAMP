@@ -1,0 +1,1063 @@
+/* JAMP - Soporte Técnico Informático */
+/* Paleta de colores: Blanco y Negro Profesional */
+
+:root {
+    --primary-color: #1e3a8a; /* Azul oscuro */
+    --secondary-color: #ffffff;
+    --accent-color: #3b82f6; /* Azul medio */
+    --navbar-height: 64px;
+    --light-blue: #dbeafe; /* Azul claro */
+    --dark-bg: #1f2937; /* Gris oscuro para fondo */
+    --medium-gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --success-color: #25d366; /* WhatsApp Green */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+    color: var(--primary-color);
+    background-color: var(--dark-bg);
+    font-size: 13px;
+    /* Reserve space for fixed navbar so content starts just below it */
+    padding-top: var(--navbar-height);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.3rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--primary-color) !important;
+    /* soften shadow to avoid visible band under the navbar */
+    box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+/* Move navbar content slightly to the right on medium+ screens */
+@media (min-width: 768px) {
+    .navbar .container {
+        padding-left: 4.5rem; /* increased to move navbar more to the right */
+    }
+}
+
+/* Extra offset for very wide screens */
+@media (min-width: 1200px) {
+    .navbar .container {
+        padding-left: 6rem;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--secondary-color) !important;
+    text-decoration: none;
+}
+
+.logo-img {
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    color: var(--secondary-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--light-gray) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+    border-color: #128c7e;
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--dark-bg);
+    padding-top: 0; /* start right under the navbar */
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.hero-carousel-container {
+    /* Full-bleed carousel: occupy full viewport width while keeping content centered */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 80vh;
+    border-radius: 0; /* remove rounded corners for edge-to-edge look */
+    overflow: hidden;
+    box-shadow: none; /* remove shadow to blend with page edges */
+}
+
+.hero-carousel-container .carousel {
+    height: 100%;
+}
+
+/* Ensure slides occupy full height but are hidden by default; only .show becomes visible and centers content */
+.hero-carousel-container .carousel-slide {
+    height: 100%;
+}
+
+.hero-carousel-container .carousel-slide.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 3;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-slide1 {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.hero-slide2 {
+    background: linear-gradient(135deg, var(--accent-color), var(--light-blue));
+}
+
+.hero-slide3 {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-bg));
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--light-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+}
+
+.hero-image img {
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+}
+
+/* Background image inside carousel slides: cover the whole slide */
+.hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Keep hero content above the background image */
+.hero-content {
+    z-index: 3;
+    position: relative;
+}
+
+/* Darken the first slide image slightly so overlaid text stays legible */
+.hero-slide1 .hero-bg-img {
+    filter: brightness(0.45);
+}
+
+/* Other image-only slides keep their natural brightness */
+.hero-slide2 .hero-bg-img,
+.hero-slide3 .hero-bg-img {
+    filter: none;
+}
+
+/* Si las diapositivas usan la misma imagen, aplicar diferencias visuales
+   para que al navegar con las flechas se note el cambio. */
+.hero-slide2 .hero-bg-img {
+    filter: brightness(0.9) contrast(1.02) saturate(0.95);
+    transform: scale(1.03);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.hero-slide3 .hero-bg-img {
+    /* Mostrar la imagen en color: remover grayscale pero mantener ajustes leves de contraste/brightness */
+    filter: contrast(0.9) brightness(0.95);
+    transform: scale(1.02);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Cards */
+.service-card {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid var(--light-blue);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.service-card:hover .service-icon {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: var(--medium-gray);
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.service-features li {
+    padding: 0.4rem 0;
+    color: var(--medium-gray);
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Service Detail Cards */
+.service-detail-card {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    height: 100%;
+    border: 1px solid var(--light-blue);
+    transition: var(--transition);
+}
+
+.service-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-detail-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.service-detail-card h3 i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.service-list li {
+    padding: 0.6rem 0;
+    color: var(--medium-gray);
+    position: relative;
+    padding-left: 2rem;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 0.9rem;
+}
+
+.service-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.price-info {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--light-gray);
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+}
+
+.price-note {
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+    font-style: italic;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    height: 100%;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-content {
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.testimonial-author h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-author span {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+/* Info Section */
+.info-content h3 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-content h3:first-child {
+    margin-top: 0;
+}
+
+.info-content p {
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.info-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid var(--light-blue);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+/* Contact Form */
+.contact-form-card {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--light-blue);
+    transition: var(--transition);
+}
+
+.contact-form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.contact-info-card {
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    color: var(--secondary-color);
+    height: 100%;
+    transition: var(--transition);
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+}
+
+.contact-item h5 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: var(--light-gray);
+    margin: 0;
+}
+
+.whatsapp-cta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-color);
+}
+
+/* Form Controls */
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+    background-color: var(--secondary-color);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.footer-text {
+    color: var(--light-gray);
+    margin: 0;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-copyright {
+    color: var(--light-gray);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Background Sections */
+.bg-light {
+    background-color: var(--light-gray) !important;
+}
+
+/* Carrusel Styles */
+.carousel-container {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.carousel-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Fade-style slides: keep all slides in the flow but invisible (opacity 0).
+   The active slide (.show) fades in with a smooth transition. This allows
+   animations between slides instead of instant display toggles. */
+.carousel-slide {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateZ(0);
+    transition: opacity 1s ease, transform 1s ease;
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+}
+
+.carousel-slide.show {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.carousel-slide.slide1 {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.carousel-slide.slide2 {
+    background: linear-gradient(135deg, var(--accent-color), var(--light-blue));
+}
+
+.carousel-slide.slide3 {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-bg));
+}
+
+.carousel-controls {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 15px;
+    gap: 10px;
+    z-index: 5;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: var(--transition);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-arrow:hover {
+    background: var(--secondary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.prev {
+    left: 15px;
+}
+
+.carousel-arrow.next {
+    right: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .info-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-item i {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-links {
+        text-align: center;
+    }
+    
+    .footer-links a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .service-card, .service-detail-card, .contact-form-card, .contact-info-card {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Reseñas */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-card {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+.review-content p {
+    color: var(--medium-gray);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review-author h5 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.review-author span {
+    color: #f59e0b; /* amarillo para estrellas */
+    font-weight: 700;
+}
+
+.review-form-card {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--light-blue);
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s cubic-bezier(.2,.8,.2,1), background 0.25s ease;
+}
+
+.review-form-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Hover / focus animation for the review form to match the review cards */
+.review-form-card:hover,
+.review-form-card:focus-within {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Slight background change to emphasize interaction */
+.review-form-card:hover {
+    background: rgba(255,255,255,0.98);
+}
+
+/* For dark theme, keep contrast while hovering */
+body:not([data-theme="light"]) .review-form-card:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+/* Make the submit button slightly lift on hover to match the card behaviour */
+.review-form-card .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Theme: light overrides */
+body[data-theme="light"] {
+    --primary-color: #0f172a; /* dark text */
+    --secondary-color: #ffffff; /* card/background */
+    --accent-color: #3b82f6;
+    --light-blue: #eef2ff;
+    --dark-bg: #ffffff; /* page background becomes white */
+    --medium-gray: #4b5563;
+    --light-gray: #f8fafc;
+    --success-color: #25d366;
+    --shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+}
+
+/* Theme toggle button styles */
+.btn-theme-toggle {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--secondary-color);
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.btn-theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
+/* Adjust theme button colors when in light theme */
+body[data-theme="light"] .btn-theme-toggle {
+    border-color: rgba(15,23,42,0.08);
+    color: var(--primary-color);
+}
+
+.btn-theme-toggle i {
+    font-size: 16px;
+    color: currentColor;
+}
+
+/* Slightly stronger background in dark to make icon visible on very dark navbars */
+@media (prefers-color-scheme: dark) {
+    .btn-theme-toggle {
+        background: rgba(255,255,255,0.04);
+    }
+}
+
+/* Make the moon icon a bit lighter/more visible */
+.btn-theme-toggle .fa-moon {
+    color: rgba(255,255,255,0.95); /* bright on dark backgrounds */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* When in light theme, give the moon a subtle contrast (not too dark) */
+body[data-theme="light"] .btn-theme-toggle .fa-moon {
+    color: rgba(17,24,39,0.85); /* slightly softened dark color */
+    text-shadow: none;
+}
+
+/* Hover / focus animation for review cards */
+.review-card:hover,
+.review-card:focus-within {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.review-card:hover .review-author h5,
+.review-card:focus-within .review-author h5 {
+    color: var(--accent-color);
+}
+
+.review-card:active {
+    transform: translateY(-4px) scale(1.01);
+}
