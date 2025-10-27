@@ -1,6 +1,17 @@
 # 🚀 JAMP - Sitio Web Profesional
 *Soporte Técnico Informático - Montevideo, Uruguay*
 
+## 🌐 Sitio Web en Vivo
+
+**🎉 El sitio está listo para publicarse en GitHub Pages!**
+
+Para activar la publicación:
+1. Ve a **Settings** > **Pages**
+2. En "Source", selecciona **"GitHub Actions"**
+3. El sitio se desplegará automáticamente en: `https://camiamaral.github.io/JAMP/`
+
+Ver [SETUP_GITHUB_PAGES.md](SETUP_GITHUB_PAGES.md) para instrucciones detalladas.
+
 ## 📋 Descripción del Proyecto
 
 Sitio web profesional para JAMP, empresa de soporte técnico informático en Montevideo. Desarrollado con tecnologías modernas y diseño responsivo, enfocado en aumentar la visibilidad online y generar más clientes.
@@ -36,16 +47,31 @@ Sitio web profesional para JAMP, empresa de soporte técnico informático en Mon
 ## 📁 Estructura del Proyecto
 
 ```
-jamp-website/
-├── html/
-│   └── index.html          # Página principal
-├── css/
-│   └── styles.css          # Estilos personalizados
-├── js/
-│   └── main.js            # Funcionalidades JavaScript
-├── assets/
-│   └── README.md          # Documentación de assets
-└── README.md              # Este archivo
+JAMP/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml      # GitHub Actions para despliegue automático
+├── docs/                          # ⭐ Sitio publicado en GitHub Pages
+│   ├── index.html                 # Página principal
+│   ├── css/
+│   │   └── styles.css             # Estilos personalizados
+│   ├── js/
+│   │   └── main.js                # Funcionalidades JavaScript
+│   └── img/
+│       ├── logo.png               # Logo JAMP
+│       ├── 1.jpg, 2.jpg, 3.jpg   # Imágenes del carrusel
+├── jamp/
+│   └── jamp-website/              # Archivos fuente originales
+│       ├── html/
+│       │   └── index.html
+│       ├── css/
+│       │   └── styles.css
+│       ├── js/
+│       │   └── main.js
+│       └── img/
+├── SETUP_GITHUB_PAGES.md          # Instrucciones de configuración
+├── DEPLOYMENT_COMPLETE.md         # Resumen del despliegue
+└── README.md                      # Este archivo
 ```
 
 ## 🎨 Diseño y UX
@@ -191,16 +217,47 @@ Editar variables CSS en `css/styles.css`:
 - ✅ Lazy loading implementado
 - ✅ Carga asíncrona de recursos
 
-## 🚀 Despliegue
+## 🚀 Despliegue en GitHub Pages
 
-### Hosting Recomendado
+### ✅ Estado Actual
+- ✅ Sitio preparado y listo para publicar
+- ✅ GitHub Actions workflow configurado
+- ✅ Todos los archivos en la carpeta `docs/`
+- ⏳ Esperando activación de GitHub Pages
+
+### 📋 Cómo Activar (Un solo paso!)
+
+1. **Ve a Settings** → **Pages**
+2. **En "Source"**, selecciona: **"GitHub Actions"**
+3. ¡Listo! El sitio se desplegará automáticamente
+
+**URL del sitio**: `https://camiamaral.github.io/JAMP/`
+
+Ver [SETUP_GITHUB_PAGES.md](SETUP_GITHUB_PAGES.md) para más detalles.
+
+### 🔄 Actualizaciones Automáticas
+
+Cada vez que hagas push a `main`, el sitio se actualiza automáticamente.
+
+### 📖 Documentación de Despliegue
+
+- **[SETUP_GITHUB_PAGES.md](SETUP_GITHUB_PAGES.md)** - Instrucciones paso a paso
+- **[DEPLOYMENT_COMPLETE.md](DEPLOYMENT_COMPLETE.md)** - Resumen completo y troubleshooting
+
+---
+
+## 🏢 Hosting Alternativo (Opcional)
+
+Si prefieres hosting tradicional:
+
+### VPS Recomendado
 - **VPS**: Debian 12 con Nginx
 - **Configuración**: 2 CPU, 4GB RAM, 50GB SSD
 - **SSL**: Certificado Let's Encrypt
 - **Backup**: Automático diario
 
 ### Pasos de Despliegue
-1. Subir archivos al servidor
+1. Subir archivos del directorio `docs/` al servidor
 2. Configurar dominio
 3. Instalar certificado SSL
 4. Configurar envío de emails
